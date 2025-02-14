@@ -140,16 +140,9 @@ const SearchRecipes = () => {
         {recipes.length === 0 ? (
           <p>No recipes found.</p>
         ) : (
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "15px" }}>
+          <div className="recipesCards">
             {recipes.map((recipe, index) => (
-              <div
-                key={index}
-                style={{
-                  border: "1px solid #ddd",
-                  padding: "10px",
-                  borderRadius: "5px",
-                }}
-              >
+              <div className="recipeCard" key={index}>
                 <h4>{recipe.title}</h4>
                 <img
                   src={recipe.imageUrl}

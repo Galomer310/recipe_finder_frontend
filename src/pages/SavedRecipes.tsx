@@ -55,20 +55,12 @@ const SavedRecipes = () => {
         <p>No saved recipes yet.</p>
       ) : (
         savedRecipes.map((recipe, index) => (
-          <div
-            key={index}
-            style={{
-              border: "1px solid #ddd",
-              padding: "10px",
-              margin: "10px",
-              borderRadius: "5px",
-            }}
-          >
+          <div className="saved-recipe-card" key={index}>
             <h4>{recipe.title}</h4>
             <img
+              className="saved-recipe-image"
               src={recipe.imageUrl}
               alt={recipe.title}
-              style={{ width: "150px", height: "100px", borderRadius: "5px" }}
             />
             <p>
               <a
@@ -80,16 +72,8 @@ const SavedRecipes = () => {
               </a>
             </p>
             <button
+              className="delete-button"
               onClick={() => handleDeleteRecipe(recipe.id)}
-              style={{
-                marginTop: "10px",
-                padding: "5px",
-                backgroundColor: "red",
-                color: "white",
-                border: "none",
-                borderRadius: "5px",
-                cursor: "pointer",
-              }}
             >
               Delete Recipe
             </button>

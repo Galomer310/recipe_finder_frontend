@@ -1,51 +1,117 @@
-# React + TypeScript + Vite
+# 🍽️ Recipe Finder Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend** for the **Recipe Finder** project, built with **React, Redux, TypeScript, and Vite**.  
+It allows users to **search for recipes, save favorite recipes, and manage authentication (login/register).**  
 
-Currently, two official plugins are available:
+🚀 **Live Backend**: [Your Backend Render URL](https://your-backend-url.onrender.com)  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
+✅ **User Registration & Login** (JWT authentication)  
+✅ **Search Recipes** using Spoonacular API  
+✅ **Save Favorite Recipes**  
+✅ **View Saved Recipes** upon login  
+✅ **Delete Saved Recipes**  
+✅ **Pagination Support**  
+✅ **Fully Responsive UI**  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 📌 Technologies Used
+- **React (Vite)** - Frontend framework
+- **Redux Toolkit** - State management
+- **TypeScript** - Type safety
+- **Axios** - API calls
+- **React Router** - Client-side routing
+- **CSS** - Styling for the UI
+- **Render** - Deployment 
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 📂 Project Structure
+```
+recipe_finder_frontend/
+│── src/
+│   ├── components/
+│   │   ├── Navbar.tsx          # Navigation bar
+│   │   ├── ProtectedRoute.tsx  # Route protection for logged-in users
+│   ├── pages/
+│   │   ├── Home.tsx            # Home Page
+│   │   ├── Login.tsx           # Login Page
+│   │   ├── Register.tsx        # Register Page
+│   │   ├── SearchRecipes.tsx   # Search Recipes Page
+│   │   ├── SavedRecipes.tsx    # Saved Recipes Page
+│   ├── redux/
+│   │   ├── slices/authSlice.ts    # Authentication state
+│   │   ├── slices/recipesSlice.ts # Recipe management state
+│   │   ├── store.ts              # Redux Store
+│   ├── App.tsx                 # Main App component
+│   ├── main.tsx                # Entry point
+│── public/                     # Public assets
+│── .env                        # Environment variables (not uploaded)
+│── .gitignore                   # Ignored files
+│── package.json                 # Dependencies and scripts
+│── tsconfig.json                 # TypeScript configuration
+│── README.md                    # Documentation
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 🛠️ Setup & Installation
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### 1️⃣ **Clone the Repository**
+```sh
+git clone https://github.com/YOUR_USERNAME/recipe_finder_frontend.git
+cd recipe_finder_frontend
 ```
-# recipe_finder_frontend
+
+### 2️⃣ **Install Dependencies**
+```sh
+npm install
+```
+
+### 3️⃣ **Configure Environment Variables**
+Create a `.env` file in the root folder and add:
+```
+VITE_API_BASE_URL=https://your-backend-url.onrender.com
+```
+> 🔹 Replace `your-backend-url.onrender.com` with your actual backend URL.
+
+### 4️⃣ **Run the Development Server**
+```sh
+npm run dev
+```
+> 🚀 Your frontend will start on `http://localhost:5173`
+
+---
+
+## 🔗 API Endpoints
+The frontend interacts with the **backend API** hosted at:
+```
+https://your-backend-url.onrender.com/api
+```
+For authentication and recipe search:
+| Method  | Endpoint              | Description                     |
+|---------|----------------------|---------------------------------|
+| POST    | `/auth/register`      | Register a new user |
+| POST    | `/auth/login`         | Login and get a JWT token |
+| POST    | `/recipes/search`     | Search for recipes |
+| POST    | `/recipes/save`       | Save a recipe |
+| GET     | `/recipes/saved`      | Retrieve saved recipes |
+| DELETE  | `/recipes/saved/:id`  | Delete a saved recipe |
+
+> 🔑 **Authentication Required** for all `/recipes` endpoints.  
+> Send `Authorization: Bearer YOUR_JWT_TOKEN` in the headers.
+
+---
+
+## 👥 Contributors
+- **Your Name** - [GitHub](https://github.com/YOUR_USERNAME)
+
+---
+
+## 📜 License
+This project is **open-source** under the **MIT License**.
+
+---

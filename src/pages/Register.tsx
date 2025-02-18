@@ -50,6 +50,7 @@ const Register = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
+      <br />
       <button onClick={handleRegister}>Register</button>
       <p>
         Already have an account? <a href="/login">Login</a>

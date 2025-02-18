@@ -114,8 +114,39 @@ button:hover {
     border-radius: 5px;
 }
 
-
-
+/* const styles = {
+    navbar: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padding: "10px 20px",
+      backgroundColor: "#007bff",
+      color: "white",
+    },
+    title: {
+      margin: "0",
+    },
+    navLinks: {
+      listStyle: "none",
+      display: "flex",
+      gap: "15px",
+      margin: "0",
+      padding: "0",
+    },
+    link: {
+      color: "white",
+      textDecoration: "none",
+      fontSize: "16px",
+    },
+    button: {
+      backgroundColor: "red",
+      color: "white",
+      border: "none",
+      padding: "5px 10px",
+      cursor: "pointer",
+    },
+  };
+ */
 
 
 

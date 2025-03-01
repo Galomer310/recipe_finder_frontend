@@ -28,8 +28,8 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
+    <div className="login">
+      <h1>Login</h1>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <input
         type="email"

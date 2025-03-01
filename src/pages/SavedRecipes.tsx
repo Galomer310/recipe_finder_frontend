@@ -49,7 +49,7 @@ const SavedRecipes = () => {
   };
 
   return (
-    <div>
+    <div className="saved-recipes">
       <h2>Saved Recipes</h2>
       {savedRecipes.length === 0 ? (
         <p>No saved recipes yet.</p>

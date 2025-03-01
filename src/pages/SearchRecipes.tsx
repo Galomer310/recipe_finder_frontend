@@ -71,7 +71,7 @@ const SearchRecipes = () => {
   };
 
   return (
-    <div>
+    <div className="searchRecipes">
       <h2>Find Recipes</h2>
       <div>
         <label>Ingredients (comma separated):</label>
@@ -120,20 +120,7 @@ const SearchRecipes = () => {
         />
       </div>
 
-      <button
-        onClick={handleSearch}
-        style={{
-          marginTop: "10px",
-          padding: "10px",
-          backgroundColor: "#007bff",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-        }}
-      >
-        Search Recipes
-      </button>
+      <button onClick={handleSearch}>Search Recipes</button>
 
       <div>
         <h3>Results:</h3>
@@ -144,11 +131,7 @@ const SearchRecipes = () => {
             {recipes.map((recipe, index) => (
               <div className="recipeCard" key={index}>
                 <h4>{recipe.title}</h4>
-                <img
-                  src={recipe.imageUrl}
-                  alt={recipe.title}
-                  style={{ width: "100px", height: "100px" }}
-                />
+                <img src={recipe.imageUrl} alt={recipe.title} />
                 <p>
                   <a
                     href={recipe.sourceUrl}
